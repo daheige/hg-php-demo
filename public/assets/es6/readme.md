@@ -1,0 +1,1 @@
+静态资源打包请参考daheige/requirejs

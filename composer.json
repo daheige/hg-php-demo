@@ -1,0 +1,47 @@
+{
+    "name": "Hgtp-mvc",
+    "description": "基于tp3.2+slim2.6",
+    "type": "project",
+    "keywords": [
+        "thinkphp3.2",
+        "thinkphp",
+        "slim"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "daheige",
+            "email": "zhuwei313@hotmail.com"
+        }
+    ],
+    "repositories": {
+        "1": {
+            "type": "composer",
+            "url": "https://packagist.phpcomposer.com"
+        },
+        "2": {
+            "type": "git",
+            "url": "git@github.com:daheige/HgPhp.git"
+        },
+        "packagist.org": false,
+        "packagist": {
+            "type": "composer",
+            "url": "https://packagist.org"
+        }
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "guzzlehttp/guzzle": "~6.0"
+    },
+    "autoload": {
+        "classmap": [
+            "App/Logic/",
+            "App/Service/",
+            "App/Lib/"
+        ]
+    },
+    "config": {
+        "preferred-install": "dist",
+        "secure-http": false
+    }
+}
