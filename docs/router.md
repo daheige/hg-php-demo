@@ -39,7 +39,7 @@ Route groups are very useful to group related routes and avoid repeating common 
 简单域名匹配
 子域名路由也是通过路由组的形式来实现，可以通过domain属性为组路由设置绑定域名：请看下面列子：
 
-$app->group(['domain' => 'api.house.hhailuo.com'], function () use ($app) {
+$app->group(['domain' => 'api.hgtp.com'], function () use ($app) {
  $app->map('/upload', 'File:upload')->via('POST', 'OPTIONS');
  $app->post('/crop', 'File:crop');
 
@@ -49,7 +49,7 @@ $app->group(['domain' => 'api.house.hhailuo.com'], function () use ($app) {
 泛域名匹配
 将domain指定为{var}花括号内的部分将会被正则匹配，并且domain也会被作为路由参数传递到对应的action或者闭包函数内。
 
-$app->group(['domain' => '{domain}.house.hhailuo.com', 'module' => 'Home'], function () use ($app) {
+$app->group(['domain' => '{domain}.hgtp.com', 'module' => 'Home'], function () use ($app) {
   $app->map('/upload', 'File:upload')->via('POST', 'OPTIONS');
   $app->post('/crop', 'File:crop');
   $app->get('/', function($domain) {
@@ -60,7 +60,7 @@ $app->group(['domain' => '{domain}.house.hhailuo.com', 'module' => 'Home'], func
 可以通过module属性为组路由设置绑定分组：
 
 <?php
-$app->group(['domain' => 'admin.house.hhailuo.com', 'module' => 'Admin'], function () use ($app) {
+$app->group(['domain' => 'admin.hgtp.com', 'module' => 'Admin'], function () use ($app) {
  // $app->any();
  // 通配路由
  $app->any('/(:class(/:method(/:params+)))', ["controller" => "class", "action" => "method"]);
@@ -69,7 +69,7 @@ $app->group(['domain' => 'admin.house.hhailuo.com', 'module' => 'Admin'], functi
 可以通过prefix属性为组路由设置前缀：
 
 <?php
-$app->group(['prefix' => '/admin', 'domain' => 'admin.house.hhailuo.com', 'module' => 'Admin'], function () use ($app) {
+$app->group(['prefix' => '/admin', 'domain' => 'admin.hgtp.com', 'module' => 'Admin'], function () use ($app) {
  // $app->any();
  // 通配路由
  $app->any('/(:class(/:method(/:params+)))', ["controller" => "class", "action" => "method"]);

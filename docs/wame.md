@@ -1,3 +1,4 @@
+```
 How do I add route middleware?
 When you define a new application route with the hgtp  application’s get(), post(), put(), ordelete() methods you must define a route pattern and a callable to be invoked when the route matches an HTTP request.
 
@@ -48,3 +49,4 @@ $aBitOfInfo = function (\Think\Http\Route $route) {
 $app->get('/foo', $aBitOfInfo, function () {
     echo "foo";
 });
+```

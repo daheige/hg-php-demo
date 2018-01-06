@@ -1,6 +1,6 @@
 ```
 命名路由
-TP-Admin CMS V5 可以让你为每一个路由设置一个名字。 被命名的路由能够通过 urlFor函数去动态的创建一个URL。
+hg-php 可以让你为每一个路由设置一个名字。 被命名的路由能够通过 urlFor函数去动态的创建一个URL。
 
 <?php
 $app->get('/hello/:name', function ($name) {
