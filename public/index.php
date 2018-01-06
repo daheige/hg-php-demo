@@ -11,7 +11,7 @@ define("APP_ENV", isset($_SERVER['APP_ENV']) ? strtolower($_SERVER['APP_ENV']) :
 // 开启调试模式 建议开发阶段开启 部署阶段注释或者设为false
 define('APP_DEBUG', in_array(APP_ENV, ['local', 'testing']));
 
-require_once ROOT_PATH . '/vendor/autoload.php'; //自动加载文件设置
+require_once ROOT_PATH . 'vendor/autoload.php'; //自动加载文件设置
 
 // 引入框架入口文件
-require_once '../Framework/ThinkPHP.php';
+require_once ROOT_PATH . 'vendor/heige/hg-php/ThinkPHP.php';

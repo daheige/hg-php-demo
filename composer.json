@@ -8,12 +8,10 @@
         "slim"
     ],
     "license": "MIT",
-    "authors": [
-        {
-            "name": "daheige",
-            "email": "zhuwei313@hotmail.com"
-        }
-    ],
+    "authors": [{
+        "name": "daheige",
+        "email": "zhuwei313@hotmail.com"
+    }],
     "repositories": {
         "1": {
             "type": "composer",
@@ -31,7 +29,7 @@
     },
     "require": {
         "php": ">=5.4.0",
-        "guzzlehttp/guzzle": "~6.0"
+        "heige/hg-php": "^1.0"
     },
     "autoload": {
         "classmap": [
