@@ -59,7 +59,7 @@ class BaseLogic
 
     public function getErrorMessage()
     {
-        return empty($this->errorMessage) ? (isset($errorMessages[$this->errorCode]) ? $errorMessages[$this->errorCode] : '') : $this->errorMessage;
+        return empty($this->errorMessage) ? (isset($this->errorMessages[$this->errorCode]) ? $this->errorMessages[$this->errorCode] : '') : $this->errorMessage;
     }
 
     public function getErrorCode()
@@ -77,5 +77,11 @@ class BaseLogic
         $session_verify_code = session($session_key);
         session($session_key, null);
         return md5($verify_code) == $session_verify_code;
+    }
+    
+    public function setErrorInfo($code = 200, $msg = 'ok')
+    {
+        $this->errorCode    = $code;
+        $this->errorMessage = $msg;
     }
 }
