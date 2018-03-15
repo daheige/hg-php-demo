@@ -5,6 +5,7 @@ if (version_compare(PHP_VERSION, '5.4.0', '<')) {
     die('require PHP > 5.4.0 !');
 }
 
+date_default_timezone_set('Asia/Shanghai');
 defined('ROOT_PATH') || define('ROOT_PATH', dirname(__DIR__) . '/');
 define("APP_ENV", isset($_SERVER['APP_ENV']) ? strtolower($_SERVER['APP_ENV']) : 'local');
 

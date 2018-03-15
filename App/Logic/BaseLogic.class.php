@@ -1,9 +1,5 @@
 <?php
-//logic基类
-
 namespace Logic;
-
-use Lib\Log;
 
 /**
  * Logic 基类
@@ -11,14 +7,9 @@ use Lib\Log;
  */
 class BaseLogic
 {
-    protected $errorCode     = 0;
-    protected $errorMessages = ['0' => ''];
-    protected $errorMessage  = '';
-    /**
-     * 接口返回的错误信息
-     * @var null
-     */
-    protected $serviceErrorInfo  = null;
+    protected $errorCode         = 0;
+    protected $errorMessages     = ['0' => ''];
+    protected $errorMessage      = '';
     protected static $_instances = [];
 
     public static function getInstance()
@@ -67,18 +58,6 @@ class BaseLogic
         return $this->errorCode;
     }
 
-    public function getServiceErrorInfo()
-    {
-        return empty($this->serviceErrorInfo) ? false : $this->serviceErrorInfo;
-    }
-
-    public function verifyCodeValidate($verify_code, $session_key = 'verify_code')
-    {
-        $session_verify_code = session($session_key);
-        session($session_key, null);
-        return md5($verify_code) == $session_verify_code;
-    }
-    
     public function setErrorInfo($code = 200, $msg = 'ok')
     {
         $this->errorCode    = $code;

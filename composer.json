@@ -5,7 +5,8 @@
     "keywords": [
         "thinkphp3.2",
         "thinkphp",
-        "slim"
+        "slim",
+        "hg-php"
     ],
     "license": "MIT",
     "authors": [{
@@ -32,11 +33,11 @@
         "heige/hg-php": "^1.0"
     },
     "autoload": {
-        "classmap": [
-            "App/Logic/",
-            "App/Service/",
-            "App/Lib/"
-        ]
+        "psr-4": {
+            "Logic\\": "App/Logic",
+            "Service\\": "App/Service",
+            "Lib\\": "App/Lib"
+        }
     },
     "config": {
         "preferred-install": "dist",

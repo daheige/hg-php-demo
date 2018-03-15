@@ -13,7 +13,7 @@ class RedisHandler
     private $redis;
     private static $_instance = [];
 
-    private function __construct($config)
+    private function __construct($config = 'REDIS_DEFAULT')
     {
         if ($config == 'REDIS_DEFAULT') {
             $conf['server'] = C('REDIS_HOST');
@@ -21,9 +21,14 @@ class RedisHandler
         } else {
             $conf = C($config);
         }
+
         $this->redis = new \Redis();
         try {
             $this->redis->connect($conf['server'], $conf['port']);
+            if (isset($conf['password']) && $conf['password']) {
+                $this->redis->auth($conf['password']);
+            }
+
             $this->redis->ping();
         } catch (\Exception $e) {
             throw new \Exception('RedisHandle_redis_connect 3 ' . $e->getMessage(), 1);

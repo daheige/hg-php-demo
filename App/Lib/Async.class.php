@@ -35,7 +35,6 @@ class Async
         // $request .= "Accept-Charset: ISO-8859-1, utf-8;q=0.66, *;q=0.66\r\n";
         // $request .= "Keep-Alive: 300\r\n";
         $request .= "Connection: keep-alive\r\n";
-        $request .= "Referer: http://tp3.hhailuo.com/\r\n";
         $request .= "Cache-Control: max-age=0\r\n";
         if (!empty($cookies)) {
             $request .= parseCookie($cookies) . "\r\n";
