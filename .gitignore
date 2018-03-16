@@ -2,3 +2,4 @@ data/runtime
 data/runtime/*
 vendor/
 vendor/*
+composer.lock
